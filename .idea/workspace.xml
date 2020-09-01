@@ -1,7 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ec60d87-4a8e-4334-862a-7737c6724f2a" name="Default Changelist" comment="" />
+    <list default="true" id="5ec60d87-4a8e-4334-862a-7737c6724f2a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/assets/images/pc/Action/Bayonetta.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/assets/images/pc/Racing/NeedforSpeedHeat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/assets/js/csi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/pages/games/pc/BatmanArkhamCity.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/pages/games/pc/Bayonetta.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/pages/games/pc/FarCryPrimal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/pages/games/pc/NeedforSpeedHeat.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/pages/games/ps/GrandTheftAutoV.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/pages/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/pages/ps.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/BatmanArkhamCity.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/BatmanTheTelltaleSeries.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/games/BatmanTheTelltaleSeries.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/Bayonetta.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/CallofDutyModernWarfare.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/games/xbox/CallofDutyModernWarfare.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/CallofDutyWarzone.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/games/CallofDutyWarzone.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/Cyberpunk2077.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/games/ps/Cyberpunk2077.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/DeadSpace.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/games/xbox/DeadSpace.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/FarCryPrimal.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/Fortnite.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/games/Fortnite.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/GrandTheftAutoV.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/KanesWrath.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/games/xbox/KanesWrath.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/NeedforSpeedHeat.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/PC.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/StarOcean.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/games/xbox/StarOcean.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/TheWalkingDead.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/games/TheWalkingDead.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/callofdutymodernwarfare2.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/games/ps/callofdutymodernwarfare2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/fallout4.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/games/ps/fallout4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/fonts/FontAwesome.otf" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/fonts/FontAwesome.otf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/fonts/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/fonts/font-awesome.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/fonts/fontawesome-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/fonts/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/fonts/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/fonts/lineo-icon/Read Me.txt" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/fonts/lineo-icon/Read Me.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/fonts/lineo-icon/demo-files/demo.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/fonts/lineo-icon/demo-files/demo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/fonts/lineo-icon/demo-files/demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/fonts/lineo-icon/demo-files/demo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/fonts/lineo-icon/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/fonts/lineo-icon/demo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/fonts/lineo-icon/fonts/icomoon.eot" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/fonts/lineo-icon/fonts/icomoon.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/fonts/lineo-icon/fonts/icomoon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/fonts/lineo-icon/fonts/icomoon.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/fonts/lineo-icon/fonts/icomoon.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/fonts/lineo-icon/fonts/icomoon.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/fonts/lineo-icon/fonts/icomoon.woff" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/fonts/lineo-icon/fonts/icomoon.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/fonts/lineo-icon/selection.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/fonts/lineo-icon/selection.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/fonts/lineo-icon/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/fonts/lineo-icon/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/PC/Action/BatmanArkhamCity.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/pc/Action/BatmanArkhamCity.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/PC/Action/Bayonetta.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/PC/Action/CallofDutyWarzone.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/pc/Action/CallofDutyWarzone.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/PC/Action/FarCryPrimal.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/pc/Action/FarCryPrimal.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/PC/Action/Fortnite.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/pc/Action/Fortnite.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/PC/Adventure/BatmanTheTelltaleSeries.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/pc/Adventure/BatmanTheTelltaleSeries.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/PC/Adventure/TheWalkingDead.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/pc/Adventure/TheWalkingDead.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/PC/Racing/NeedforSpeedHeat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/PlayStation/Cyberpunk-2077.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/ps/Cyberpunk-2077.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/PlayStation/GrandTheftAutoV.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/ps/GrandTheftAutoV.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/PlayStation/callofdutymodernwarfare2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/ps/callofdutymodernwarfare2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/PlayStation/fallout4.jfif" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/ps/fallout4.jfif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/XBox/CallofDutyModernWarfare.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/xbox/CallofDutyModernWarfare.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/XBox/DeadSpace.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/xbox/DeadSpace.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/XBox/KanesWrath.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/xbox/KanesWrath.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/XBox/StarOcean.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/xbox/StarOcean.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/arrow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/arrow@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/arrow@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/icon-home.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/icon-home.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/icon-home@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/icon-home@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/icon-search.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/icon-search.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/icon-search@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/icon-search@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/logo.ai" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/logo.ai" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/select.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/select.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/select@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/select@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/slide-farcry.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/slide-farcry.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/slide-gta.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/slide-gta.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/images/slide-thewalkingdead.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/images/slide-thewalkingdead.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/js/ie-support/html5.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/js/ie-support/html5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/js/ie-support/pie.htc" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/js/ie-support/pie.htc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/js/ie-support/respond.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/js/ie-support/respond.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/js/jquery-1.11.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/js/jquery-1.11.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/js/jquery-1.11.1.min.map" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/js/jquery-1.11.1.min.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/js/min/app-min.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/js/min/app-min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/js/min/plugins-min.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/js/min/plugins-min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/js/plugins.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/js/plugins.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pc.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/pc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pc2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/products.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/sass/layout/_content.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/sass/layout/_content.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/sass/layout/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/sass/layout/_footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/sass/layout/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/sass/layout/_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/sass/libs/_components.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/sass/libs/_components.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/sass/libs/_global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/sass/libs/_global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/sass/libs/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/sass/libs/_mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/sass/libs/_normalize.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/sass/libs/_normalize.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/sass/libs/_settings.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/sass/libs/_settings.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/sass/libs/bootstrap-grid/_grid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/sass/libs/bootstrap-grid/_grid.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/sass/libs/bootstrap-grid/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/sass/libs/bootstrap-grid/_mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/sass/libs/bootstrap-grid/_settings.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/sass/libs/bootstrap-grid/_settings.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/sass/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/sass/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/assets/styles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/xbox.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/xbox.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,11 +113,18 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="JavaScript File" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1geJ8fDhW3RILmfjUwNSVy8wDxA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -22,6 +132,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/server/mongoDB" />
@@ -32,12 +144,16 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/pages" />
+      <recent name="$PROJECT_DIR$/client/pages/games/xbox" />
+      <recent name="$PROJECT_DIR$/client/pages/games/ps" />
+      <recent name="$PROJECT_DIR$/client/pages/games/pc" />
+      <recent name="$PROJECT_DIR$/client/pages/games" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/server/mongoDB" />
       <recent name="$PROJECT_DIR$/server" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/server/mongoDB" />
     </key>
   </component>
   <component name="RunManager">
@@ -70,17 +186,40 @@
       <workItem from="1598511446347" duration="602000" />
       <workItem from="1598560472898" duration="5967000" />
       <workItem from="1598858312254" duration="135000" />
+      <workItem from="1598984920986" duration="7104000" />
     </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <created>1598985050940</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1598985050940</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.php" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="714" y="330" width="483" height="389" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598564966129">
+    <state x="714" y="330" width="483" height="389" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598997095383">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
+    <state x="714" y="330" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1053/1920.0.1920.1080@0.0.1920.1053" timestamp="1598997095383" />
     <state x="714" y="330" width="483" height="389" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1053@0.0.1920.1053" timestamp="1598564966129" />
+    <state x="555" y="105" width="802" height="838" key="CommitChangelistDialog2" timestamp="1598985050059">
+      <screen x="0" y="0" width="1920" height="1053" />
+    </state>
+    <state x="555" y="105" width="802" height="838" key="CommitChangelistDialog2/0.0.1920.1053/1920.0.1920.1080@0.0.1920.1053" timestamp="1598985050059" />
     <state width="1897" height="345" key="GridCell.Tab.0.bottom" timestamp="1598567453239">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
@@ -149,21 +288,32 @@
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="464" y="161" key="SettingsEditor/0.0.1920.1053@0.0.1920.1053" timestamp="1598560987891" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1598564026449">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1599000152480">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1920.1053/1920.0.1920.1080@0.0.1920.1053" timestamp="1599000152480" />
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1053@0.0.1920.1053" timestamp="1598564026449" />
+    <state x="555" y="249" width="802" height="551" key="Vcs.Push.Dialog.v2" timestamp="1598985057504">
+      <screen x="0" y="0" width="1920" height="1053" />
+    </state>
+    <state x="555" y="249" width="802" height="551" key="Vcs.Push.Dialog.v2/0.0.1920.1053/1920.0.1920.1080@0.0.1920.1053" timestamp="1598985057503" />
     <state x="99" y="100" width="1722" height="853" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1598566521061">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="99" y="100" width="1722" height="853" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1598566521061" />
-    <state x="570" y="135" width="772" height="778" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1598564974986">
+    <state x="570" y="135" width="772" height="778" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1598999292756">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
+    <state x="570" y="135" width="772" height="778" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1053/1920.0.1920.1080@0.0.1920.1053" timestamp="1598999292756" />
     <state x="570" y="135" width="772" height="778" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1053@0.0.1920.1053" timestamp="1598564974986" />
-    <state x="623" y="232" width="672" height="678" key="search.everywhere.popup" timestamp="1598567315955">
+    <state x="666" y="270" width="587" height="512" key="find.popup" timestamp="1598998114089">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
+    <state x="666" y="270" width="587" height="512" key="find.popup/0.0.1920.1053/1920.0.1920.1080@0.0.1920.1053" timestamp="1598998114089" />
+    <state x="623" y="232" width="672" height="678" key="search.everywhere.popup" timestamp="1598998554514">
+      <screen x="0" y="0" width="1920" height="1053" />
+    </state>
+    <state x="623" y="232" width="672" height="678" key="search.everywhere.popup/0.0.1920.1053/1920.0.1920.1080@0.0.1920.1053" timestamp="1598998554514" />
     <state x="623" y="232" width="672" height="678" key="search.everywhere.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1598567315955" />
   </component>
 </project>
