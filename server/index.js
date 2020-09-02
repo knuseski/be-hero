@@ -22,7 +22,8 @@ con.connect(function (err) {
     console.log("Connected to mySQL!");
 });
 
-app.get('/', (req, res) => {
+// USERS
+app.get('/users', (req, res) => {
     con.query("SELECT * FROM users", function (err, result) {
         if (err) {
             throw err;
@@ -31,9 +32,9 @@ app.get('/', (req, res) => {
     });
 });
 
-app.get('/:id', (req, res) => {
+app.get('/users/:id', (req, res) => {
     const {id} = req.params;
-    con.query("SELECT * FROM users WHERE id = ?", [id], function (err, result) {
+    con.query("SELECT * FROM users WHERE id = ? LIMIT 1", [id], function (err, result) {
         if (err) {
             throw err;
         }
@@ -41,7 +42,20 @@ app.get('/:id', (req, res) => {
     });
 });
 
-app.post('/', (req, res) => {
+
+// LOGIN
+app.post('/login', (req, res) => {
+    const {username, password} = req.body;
+    con.query("SELECT * FROM users WHERE username = ? AND password = ? LIMIT 1", [username, password], function (err, result) {
+        if (err) {
+            throw err;
+        }
+        res.json(result);
+    });
+});
+
+// REGISTER
+app.post('/register', (req, res) => {
     con.query("INSERT INTO users SET ? ", req.body, function (err, result) {
         if (err) {
             throw err;
@@ -50,9 +64,24 @@ app.post('/', (req, res) => {
     });
 });
 
-app.delete('/:id', (req, res) => {
+
+// GAMES
+app.get('/games/', (req, res) => {
+    const {limit, slide} = req.query;
+    con.query('SELECT * FROM games'
+        + (slide ? (' WHERE slide = ' + slide) : '')
+        + (limit ? (' LIMIT ' + limit) : ''),
+        function (err, result) {
+            if (err) {
+                throw err;
+            }
+            res.json(result);
+        });
+});
+
+app.get('/games/:id', (req, res) => {
     const {id} = req.params;
-    con.query("DELETE FROM users WHERE id = ?", [id], function (err, result) {
+    con.query("SELECT * FROM games WHERE id = ? LIMIT 1", [id], function (err, result) {
         if (err) {
             throw err;
         }
@@ -60,10 +89,52 @@ app.delete('/:id', (req, res) => {
     });
 });
 
-// TODO Update is missing...
-app.patch('/:id', (req, res) => {
-    const {id} = req.params;
-    con.query("DELETE FROM users WHERE id = ?", [id], function (err, result) {
+
+// CART
+app.get('/getCart/:userId', (req, res) => {
+    const {userId} = req.params;
+    con.query("SELECT cart.id AS id, games.id AS gameId, games.title, games.price, cart.quantity " +
+        "FROM games JOIN cart ON games.id = cart.game_id " +
+        "WHERE cart.user_id = ?", [userId], function (err, result) {
+        if (err) {
+            throw err;
+        }
+        res.json(result);
+    });
+});
+
+app.post('/addToCart', (req, res) => {
+    const {userId, gameId, quantity} = req.body;
+    con.query("SELECT * FROM cart WHERE user_id = ? AND game_id = ?", [userId, gameId], function (err, result) {
+        if (err) {
+            throw err;
+        }
+        if (result.length !== 0) {
+            const pair = result[0];
+
+            // if there is a pair -> increase quantity
+            const newQuantity = parseInt(pair.quantity) + parseInt(quantity);
+            con.query("UPDATE cart SET quantity = ? WHERE id = ? ", [newQuantity, pair.id], function (err, result) {
+                if (err) {
+                    throw err;
+                }
+                res.json(result);
+            });
+        } else {
+            // add new pair
+            con.query("INSERT INTO cart SET ? ", {user_id: userId, game_id: gameId, quantity}, function (err, result) {
+                if (err) {
+                    throw err;
+                }
+                res.json(result);
+            });
+        }
+    });
+});
+
+app.post('/deleteFromCart', (req, res) => {
+    const {userId, gameId} = req.body;
+    con.query("DELETE FROM cart WHERE user_id = ? AND game_id = ?", [userId, gameId], function (err, result) {
         if (err) {
             throw err;
         }
