@@ -2064,7 +2064,7 @@ form textarea {
     height: 0;
 }
 
-.site-header .cart {
+.site-header .cart, .login-button {
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding-right: 20px;
     -webkit-transition: .3s ease;
@@ -2725,7 +2725,7 @@ table.cart td:last-child, table.cart th:last-child {
     border-bottom-right-radius: 3px;
 }
 
-table.cart th.product-name {
+table.cart th {
     text-align: left;
 }
 
@@ -2892,4 +2892,9 @@ table.cart .fa-times {
 .site-footer .social-links a:hover {
     background-color: white;
     color: #898e90;
+}
+
+.removeItem {
+    color: red;
+    font-size: 20px;
 }

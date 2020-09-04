@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="assets/styles/style.css">
     <script src="assets/js/ie-support/html5.js"></script>
     <script src="assets/js/ie-support/respond.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body class="slider-collapse">
@@ -29,12 +30,13 @@
                     <small class="site-description">Go Hard or Go Home</small>
                 </div>
             </a>
-
             <div class="right-section pull-right">
-                <a href="pages/cart.html" class="cart"><i class="icon-cart"></i> 0 продукти во кошничка</a>
+                <a href="cart.html" id="cart" class="cart"><i class="icon-cart"></i> <span id="itemCount">0</span>
+                    продукти во
+                    кошничка</a>
                 <a href="#" class="login-button">Најава/Регистрација</a>
+                <a href="#" id="btnLogout">Одјави се</a>
             </div>
-
             <div class="main-navigation">
                 <button class="toggle-menu"><i class="fa fa-bars"></i></button>
                 <ul class="menu">
@@ -55,56 +57,34 @@
 
     <div class="home-slider">
         <ul class="slides">
-            <li data-bg-image="assets/images/slide-farcry.jpg">
+            <li id="slideImage1">
                 <div class="container">
                     <div class="slide-content">
-                        <h2 class="slide-title">Far Cry Primal</h2>
-                        <small class="slide-subtitle">3199 ден.</small>
-
-                        <p>Со Far Cry Primal, инвеститорот Ubisoft ги напушта сите политички претензии и се фокусира на
-                            она што го натера да се издвојува од своите врсници. Играте како ловец на каменa доба по име
-                            Такар, а целта ви е да обезбедите засолниште за вашиот народ, племе по име Wenja, во
-                            праисториското царство на Орос.</p>
-
-                        <a href="pages/cart.html" class="button">Додади во кошница</a>
+                        <h2 id="slideTitle1" class="slide-title"></h2>
+                        <small id="slidePrice1" class="slide-subtitle"></small>
+                        <p id="slideDescription1"></p>
+                        <a id="slideAddToCart1" href="#" class="button">Додади во кошничка</a>
                     </div>
-
-                    <img src="dummy/game-cover-1.jpg" class="slide-image">
                 </div>
             </li>
-            <li data-bg-image="assets/images/slide-thewalkingdead.jpg">
+            <li id="slideImage2">
                 <div class="container">
                     <div class="slide-content">
-                        <h2 class="slide-title">The Walking Dead</h2>
-                        <small class="slide-subtitle">899 ден.</small>
-
-                        <p>The Walking Dead се врати! Откако исчезна од дигиталните пазари кога инвеститорот „Telltale
-                            Games“ замина, „The Walking Dead“ се враќа во живот благодарение на издавачот Skybound
-                            Games. Авантуристичката игра ве става во улогата на Ли, поранешен професор и осуден
-                            криминалец, кој се обидува да преживее зомби инвазија, додека чува млада девојка по име
-                            Климентин. </p>
-
-                        <a href="pages/cart.html" class="button">Додади во кошница</a>
+                        <h2 id="slideTitle2" class="slide-title"></h2>
+                        <small id="slidePrice2" class="slide-subtitle"></small>
+                        <p id="slideDescription2"></p>
+                        <a id="slideAddToCart2" href="#" class="button">Додади во кошничка</a>
                     </div>
-
-                    <img src="dummy/game-cover-2.jpg" class="slide-image">
                 </div>
             </li>
-            <li data-bg-image="assets/images/slide-gta.jpg">
+            <li id="slideImage3">
                 <div class="container">
                     <div class="slide-content">
-                        <h2 class="slide-title">Grand Theft Auto</h2>
-                        <small class="slide-subtitle">3199 ден.</small>
-
-                        <p>Grand Theft Auto V е игра со акционо авантуристички дух што се игра од трето лице или од прва
-                            перспектива. Играчите завршуваат мисии - линеарни сценарија со поставени цели - да
-                            напредуваат низ приказната. Надвор од мисиите, играчите можат слободно да шетаат низ
-                            отворениот свет.</p>
-
-                        <a href="pages/cart.html" class="button">Додади во кошница</a>
+                        <h2 id="slideTitle3" class="slide-title"></h2>
+                        <small id="slidePrice3" class="slide-subtitle"></small>
+                        <p id="slideDescription3"></p>
+                        <a id="slideAddToCart3" href="#" class="button">Додади во кошничка</a>
                     </div>
-
-                    <img src="dummy/game-cover-3.jpg" class="slide-image">
                 </div>
             </li>
         </ul>
@@ -122,57 +102,65 @@
                         <div class="product">
                             <div class="inner-product">
                                 <div class="figure-image">
-                                    <a href="pages/games/ps/Cyberpunk2077.html">
-                                        <img src="assets/images/ps/Cyberpunk-2077.jpg" alt="Game 1"></a>
+                                    <a id="gameLink1" href="#">
+                                        <img id="gameImage1" src="assets/images/games/no-image.png" alt="Game 1">
+                                    </a>
                                 </div>
-                                <h3 class="product-title"><a href="#">Cyberpunk - 2077</a></h3>
-                                <small class="price">3899 ден.</small>
-                                <p>Play Station, Xbox</p>
-                                <a href="pages/cart.html" class="button">Додади на картица</a>
-                                <a href="pages/games/ps/Cyberpunk2077.html" class="button muted">Повеќе детали</a>
+                                <h3 class="product-title">
+                                    <a id="gameTitle1" href="#"></a>
+                                </h3>
+                                <small id="gamePrice1" class="price"></small>
+                                <p id="gameDevice1"></p>
+                                <a id="addToCart1" href="#" class="button">Додади во кошничка</a>
+                                <a id="gameMoreDetails1" href="#" class="button muted">Повеќе детали</a>
                             </div>
                         </div>
-
                         <div class="product">
                             <div class="inner-product">
                                 <div class="figure-image">
-                                    <a href="pages/games/pc/NeedforSpeedHeat.html">
-                                        <img src="assets/images/pc/Racing/NeedforSpeedHeat.png" alt="Game 2"></a>
+                                    <a id="gameLink2" href="#">
+                                        <img id="gameImage2" src="assets/images/games/no-image.png" alt="Game 1">
+                                    </a>
                                 </div>
-                                <h3 class="product-title"><a href="#">Need for Speed Heat</a></h3>
-                                <small class="price">2199 ден.</small>
-                                <p>Компјутер</p>
-                                <a href="pages/cart.html" class="button">Додади на картица</a>
-                                <a href="pages/games/pc/NeedforSpeedHeat.html" class="button muted">Повеќе детали</a>
+                                <h3 class="product-title">
+                                    <a id="gameTitle2" href="#"></a>
+                                </h3>
+                                <small id="gamePrice2" class="price"></small>
+                                <p id="gameDevice2"></p>
+                                <a id="addToCart2" href="#" class="button">Додади во кошничка</a>
+                                <a id="gameMoreDetails2" href="#" class="button muted">Повеќе детали</a>
                             </div>
                         </div>
-
                         <div class="product">
                             <div class="inner-product">
                                 <div class="figure-image">
-                                    <a href="pages/games/Fortnite.html">
-                                        <img src="assets/images/pc/Action/Fortnite.jpg" alt="Game 3"></a>
+                                    <a id="gameLink3" href="#">
+                                        <img id="gameImage3" src="assets/images/games/no-image.png" alt="Game 1">
+                                    </a>
                                 </div>
-                                <h3 class="product-title"><a href="#">Fortnite</a></h3>
-                                <small class="price">Бесплатно</small>
-                                <p>Компјутер</p>
-                                <a href="pages/cart.html" class="button">Додади на картица</a>
-                                <a href="pages/games/Fortnite.html" class="button muted">Повеќе детали</a>
+                                <h3 class="product-title">
+                                    <a id="gameTitle3" href="#"></a>
+                                </h3>
+                                <small id="gamePrice3" class="price"></small>
+                                <p id="gameDevice3"></p>
+                                <a id="addToCart3" href="#" class="button">Додади во кошничка</a>
+                                <a id="gameMoreDetails3" href="#" class="button muted">Повеќе детали</a>
                             </div>
                         </div>
-
                         <div class="product">
                             <div class="inner-product">
                                 <div class="figure-image">
-                                    <a href="pages/games/xbox/CallofDutyModernWarfare.html">
-                                        <img src="assets/images/xbox/CallofDutyModernWarfare.jpeg" alt="Game 4"></a>
+                                    <a id="gameLink4" href="#">
+                                        <img id="gameImage4" src="assets/images/games/no-image.png" alt="Game 1">
+                                    </a>
                                 </div>
-                                <h3 class="product-title"><a href="#">Call of Duty Modern Warfare</a></h3>
-                                <small class="price">4199 ден.</small>
-                                <p>Xbox</p>
-                                <a href="pages/cart.html" class="button">Додади на картица</a>
-                                <a href="pages/games/xbox/CallofDutyModernWarfare.html" class="button muted">Повеќе
-                                    детали</a>
+                                <h3 class="product-title">
+                                    <a id="gameTitle4" href="#"></a>
+                                </h3>
+                                <small id="gamePrice4" class="price"></small>
+                                <p id="gameDevice4"></p>
+                                <a id="addToCart4" href="#" class="button">Додади во кошничка</a>
+                                <a id="gameMoreDetails4" href="#" class="button muted">Повеќе детали</a>
                             </div>
                         </div>
                     </div>
@@ -213,18 +201,20 @@
     <div class="row">
         <div class="col-md-6">
             <h2 class="section-title">Најава</h2>
-            <form action="#">
-                <input type="text" placeholder="Корисчнико име">
-                <input type="password" placeholder="Лозинка">
-                <input type="submit" value="Најава">
+            <form>
+                <input id="username" type="text" placeholder="Корисчнико име">
+                <input id="password" type="password" placeholder="Лозинка">
+                <p style="color: red" id="errorMessage"></p>
+                <input id="bntLogin" type="submit" value="Најава">
             </form>
         </div>
         <div class="col-md-6">
             <h2 class="section-title">Креирај корисничко име</h2>
-            <form action="#">
-                <input type="text" placeholder="Корисчнико име">
-                <input type="text" placeholder="Email адреса">
-                <input type="submit" value="Регистрирај се">
+            <form>
+                <input id="usernameRegister" type="email" placeholder="Корисчнико име">
+                <input id="passwordRegister" type="password" placeholder="Лозинка">
+                <p style="color: red" id="registerErrorMessage"></p>
+                <input id="btnRegister" type="submit" value="Регистрирај се">
             </form>
         </div>
     </div>
@@ -232,7 +222,7 @@
 
 <script src="assets/js/jquery-1.11.1.min.js"></script>
 <script src="assets/js/plugins.js"></script>
-<script src="assets/js/app.js"></script>
+<script src="app.js"></script>
 
 </body>
 
