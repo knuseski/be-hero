@@ -67,15 +67,26 @@ app.post('/register', (req, res) => {
 
 // GAMES
 app.get('/games/', (req, res) => {
-    const {limit, slide} = req.query;
-    con.query('SELECT * FROM games'
-        + (slide ? (' WHERE slide = ' + slide) : '')
-        + (limit ? (' LIMIT ' + limit) : ''),
+    const {device, slide, limit, offset} = req.query;
+    con.query('SELECT * FROM games WHERE 1 = 1'
+        + (device ? (' AND device = \'' + device + '\'') : '')
+        + (slide ? (' AND slide = ' + slide) : '')
+        + (limit ? (' LIMIT ' + limit) : '')
+        + (offset ? (' OFFSET ' + offset) : ''),
         function (err, result) {
             if (err) {
                 throw err;
             }
-            res.json(result);
+            con.query('SELECT COUNT(*) AS total FROM games WHERE 1 = 1'
+                + (device ? (' AND device = \'' + device + '\'') : '')
+                + (slide ? (' AND slide = ' + slide) : ''),
+                function (err, count) {
+                    if (err) {
+                        throw err;
+                    }
+
+                    res.json({result, count});
+                });
         });
 });
 

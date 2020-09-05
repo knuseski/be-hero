@@ -513,8 +513,9 @@ form textarea {
     float: right;
 }
 
-.filter-bar .pagination a, .filter-bar .pagination span, .pagination-bar .pagination a, .pagination-bar .pagination span {
+.filter-bar .pagination button, .filter-bar .pagination span, .pagination-bar .pagination button, .pagination-bar .pagination span {
     text-align: center;
+    border: 0;
     width: 30px;
     height: 30px;
     line-height: 2;
@@ -524,7 +525,7 @@ form textarea {
     color: #898e90;
 }
 
-.filter-bar .pagination a.current, .filter-bar .pagination span.current, .pagination-bar .pagination a.current, .pagination-bar .pagination span.current {
+.filter-bar .pagination button.current, .filter-bar .pagination span.current, .pagination-bar .pagination button.current, .pagination-bar .pagination span.current {
     background-color: #45b77d;
     color: white;
 }
@@ -2905,4 +2906,9 @@ table.cart .fa-times {
 
 .swal-button:hover {
     background-color: #69c697 !important;
+}
+
+.page-number {
+    margin-left: 5px;
+    margin-right: 5px;
 }

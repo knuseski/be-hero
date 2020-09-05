@@ -1,8 +1,8 @@
 (function ($, document, window) {
     $(document).ready(function () {
-
         $('.cart').hide();
         $('#btnLogout').hide();
+        $('.product-list').text('');
 
         // Cloning main navigation for mobile menu
         $('.mobile-navigation').append($('.main-navigation .menu').clone());
@@ -61,7 +61,7 @@
                 let html = '';
                 $('#slide').text(html);
 
-                response.forEach(game => {
+                response.result.forEach(game => {
                     html +=
                         '<li id="slideImage' + game.id + '">' +
                         '<div class="container">' +
@@ -82,7 +82,7 @@
 
                 // Adding click event
                 let loading = false;
-                response.forEach(game => {
+                response.result.forEach(game => {
                     $('#slideImage' + game.id).css('background-image', 'url(assets/images/games/slide-' + game.imageName + ')');
                     $('#item' + game.id).click(e => {
                         loading = true;
@@ -97,13 +97,13 @@
                 let html = '';
                 $('.product-list').text(html);
 
-                response.forEach(game => {
+                response.result.forEach(game => {
                     html +=
                         '<div class="product">' +
                         '<div class="inner-product">' +
                         '<div class="figure-image">' +
                         '<a href="game.html?id=' + game.id + '">' +
-                        '<img id="gameImage1" src="assets/images/games/' + game.imageName + '" alt="Game">' +
+                        '<img src="assets/images/games/' + game.imageName + '" alt="Game">' +
                         '</a>' +
                         '</div>' +
                         '<h3 class="product-title">' +
@@ -120,15 +120,37 @@
 
                 // Adding click event
                 let loading = false;
-                response.forEach(game => {
+                response.result.forEach(game => {
                     $('#item' + game.id).click(e => {
                         loading = true;
                         e.preventDefault();
                         addToCart(e, game);
                     });
                 });
-
             }).error(() => swal('Нeшто не беше во ред, Ве молиме обидете се повторно!'));
+        }
+        if (page.startsWith('pc.html') || page.startsWith('ps.html') || page.startsWith('xbox.html')) {
+            let limit = 4;
+            let offset = 0;
+            let currentPage = 1;
+
+            const device = page.startsWith('pc.html') ? 'Компјутер' : page.startsWith('ps.html') ? 'Play Station' : 'Xbox';
+
+            getGamesByConsole(device, limit, offset, currentPage);
+            $('#pageLeft').click(e => {
+                e.preventDefault();
+
+                offset -= limit;
+                currentPage--;
+                getGamesByConsole(limit, offset, currentPage);
+            });
+            $('#pageRight').click(e => {
+                e.preventDefault();
+
+                offset += limit;
+                currentPage++;
+                getGamesByConsole(limit, offset, currentPage);
+            });
         }
         if (page.startsWith('game.html')) {
             const urlParams = new URLSearchParams(window.location.search);
@@ -137,6 +159,11 @@
                 // Get game details by ID
                 $.get('http://localhost:3000/games/' + id, data => {
                     const game = data[0];
+                    $('#gameNameNav').text(game.title);
+                    $('#gameDeviceNav').text('Игри за ' + game.device);
+                    const device = game.device === 'Компјутер' ? 'pc.html' : game.device === 'Play Station' ? 'ps.html' : 'xbox.html';
+                    $('#gameDeviceNav').attr('href', device);
+
                     $('#title').text(game.title);
                     $('#price').text(commafy(game.price) + ' ден.');
                     $('#description').text(game.description);
@@ -235,10 +262,13 @@
 
         function addToCart(e, game) {
             e.preventDefault();
+            const userId = sessionStorage.getItem('USER_ID');
+            const username = sessionStorage.getItem('USER_NAME');
 
             if (userId && username) {
-                $.post('http://localhost:3000/addToCart/', {userId: 1, gameId: game.id, quantity: 1}, () => {
+                $.post('http://localhost:3000/addToCart/', {userId: userId, gameId: game.id, quantity: 1}, () => {
                     getCart(true);
+                    window.location.href = "cart.html";
                 }).error(() => swal('Нeшто не беше во ред, Ве молиме обидете се повторно!'));
             } else {
                 swal('Најавете се, за да можете да додадете продукт во кошничка!');
@@ -315,6 +345,65 @@
             $('#total').text(commafy(total) + ' ден.');
             $('#shipping').text(commafy(shipping) + ' ден.');
             $('#fullTotal').text(commafy(fullTotal) + ' ден.');
+        }
+
+        function getGamesByConsole(device, limit, offset, currentPage) {
+            $.get('http://localhost:3000/games?device=' + device + '&limit=' + limit + '&offset=' + offset, response => {
+                let html = '';
+                $('.product-list').text(html);
+                response.result.forEach(game => {
+                    html +=
+                        '<div class="product">' +
+                        '<div class="inner-product">' +
+                        '<div class="figure-image">' +
+                        '<a href="game.html">' +
+                        '<img src="assets/images/games/' + game.imageName + '" alt="Game">' +
+                        '</div>' +
+                        '<h3 class="product-title"><a href="#">' + game.title + '</a></h3>' +
+                        '<p>' + game.category + '</p>' +
+                        '<a id="item' + game.id + '" href="#" class="button">Додади во кошничка</a>' +
+                        '<a href="game.html?id=' + game.id + '" class="button muted">Повеќе детали</a>' +
+                        '</div>' +
+                        '</div>'
+                });
+                $('.product-list').append(html);
+
+                // Adding click event
+                let loading = false;
+                response.result.forEach(game => {
+                    $('#item' + game.id).click(e => {
+                        loading = true;
+                        e.preventDefault();
+                        addToCart(e, game);
+                    });
+                });
+
+                // Calculating total pages
+                const total = response.count[0].total;
+                let pages = total / limit;
+                const needOneMore = pages % 1 !== 0;
+                pages = needOneMore ? pages + 1 : pages;
+
+                // Disable left button on first page
+                if (currentPage === 1) {
+                    $('#pageLeft').prop('disabled', true);
+                    $('#pageLeft').removeClass('current');
+                } else {
+                    $('#pageLeft').prop('disabled', false);
+                    $('#pageLeft').addClass('current');
+                }
+
+                // Dissble right button on last page
+                if (currentPage === parseInt(pages)) {
+                    $('#pageRight').prop('disabled', true);
+                    $('#pageRight').removeClass('current');
+                } else {
+                    $('#pageRight').prop('disabled', false);
+                    $('#pageRight').addClass('current');
+                }
+
+                $('#currentPage').text(currentPage);
+            }).error(() => swal('Нeшто не беше во ред, Ве молиме обидете се повторно!'));
         }
 
         function commafy(num) {
