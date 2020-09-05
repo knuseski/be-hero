@@ -12,11 +12,6 @@
             $('.mobile-navigation').slideToggle();
         });
 
-        $('.home-slider').flexslider({
-            controlNav: true,
-            directionNav: false
-        });
-
         $('.login-button').on('click', function () {
             const userId = sessionStorage.getItem('USER_ID');
             const userName = sessionStorage.getItem('USER_NAME');
@@ -41,6 +36,8 @@
 
     });
 
+    let products = [];
+
     $(window).load(function () {
         const parts = window.location.href.split('\/');
         const page = parts[parts.length - 1];
@@ -61,17 +58,39 @@
 
             // Get 3 sliding games
             $.get('http://localhost:3000/games/?slide=true&limit=3', response => {
-                for (let i = 0; i < response.length; i++) {
-                    const game = response[i];
-                    const elemId = i + 1;
+                let html = '';
+                $('#slide').text(html);
 
-                    $('#slideImage' + elemId).css('background-image', 'url(assets/images/games/slide-' + game.imageName + ')')
-                    $('#slideTitle' + elemId).text(game.title);
-                    $('#slidePrice' + elemId).text(commafy(game.price) + ' ден.');
-                    $('#slideDescription' + elemId).text(game.description);
-                    $('#slideAddToCart' + elemId).click(e => addToCart(e, game));
-                }
-            }).error(e => console.error(e.message));
+                response.forEach(game => {
+                    html +=
+                        '<li id="slideImage' + game.id + '">' +
+                        '<div class="container">' +
+                        '<div class="slide-content">' +
+                        '<h2 class="slide-title">' + game.title + '</h2>' +
+                        '<small class="slide-subtitle">' + commafy(game.price) + ' ден.</small>' +
+                        '<p>' + game.description + '</h2></p>' +
+                        '<a id="item' + game.id + '" href="#" class="button">Додади во кошничка</a>' +
+                        '</div>' +
+                        '</div>' +
+                        '</li>'
+                });
+                $('#slide').append(html);
+                $('.home-slider').flexslider({
+                    controlNav: true,
+                    directionNav: false
+                });
+
+                // Adding click event
+                let loading = false;
+                response.forEach(game => {
+                    $('#slideImage' + game.id).css('background-image', 'url(assets/images/games/slide-' + game.imageName + ')');
+                    $('#item' + game.id).click(e => {
+                        loading = true;
+                        e.preventDefault();
+                        addToCart(e, game);
+                    });
+                });
+            }).error(() => swal('Нeшто не беше во ред, Ве молиме обидете се повторно!'));
 
             // Get first 4 games
             $.get('http://localhost:3000/games?limit=4', response => {
@@ -89,7 +108,7 @@
 
                     $('#addToCart' + elemId).click(e => addToCart(e, game));
                 }
-            }).error(e => console.error(e.message));
+            }).error(() => swal('Нeшто не беше во ред, Ве молиме обидете се повторно!'));
         }
         if (page.startsWith('game.html')) {
             const urlParams = new URLSearchParams(window.location.search);
@@ -112,12 +131,24 @@
                     } else {
                         $('#device').hide();
                     }
-                }).error(e => console.error(e.message));
+                }).error(() => swal('Нeшто не беше во ред, Ве молиме обидете се повторно!'));
             }
         }
         if (page.startsWith('cart.html')) {
             if (userId && username) {
                 getCart(false);
+
+                $('#btnPay').click(e => {
+                    e.preventDefault();
+                    if (products.length > 0) {
+                        $.post('http://localhost:3000/clearCart/', {userId}, () => {
+                            getCart(false);
+                            swal('Вашата нарачка е примена.' +
+                                '\nПратката ќе пристигне во вашиот дом за 5 работни дена' +
+                                '\n\nСо почит BeHero');
+                        }).error(() => swal('Нeшто не беше во ред, Ве молиме обидете се повторно!'));
+                    }
+                });
             }
         }
 
@@ -145,7 +176,7 @@
                         $('#password').val('');
                         $('#errorMessage').text('Погрешно корисничко име или лозинка!');
                     }
-                }).error(() => $('#errorMessage').text('Ншто не беше во ред, Ве молиме обидете се повторно!'));
+                }).error(() => swal('Нeшто не беше во ред, Ве молиме обидете се повторно!'));
             } else {
                 $('#errorMessage').text('Сите полиња се задолжителни!');
             }
@@ -164,7 +195,7 @@
                     $('.popup').toggleClass('active');
 
                     swal("Hello world!");
-                }).error(() => $('#registerErrorMessage').text('Ншто не беше во ред, Ве молиме обидете се повторно!'));
+                }).error(() => swal('Нeшто не беше во ред, Ве молиме обидете се повторно!'));
             } else {
                 $('#registerErrorMessage').text('Сите полиња се задолжителни!');
             }
@@ -185,20 +216,24 @@
 
             $.post('http://localhost:3000/addToCart/', {userId: 1, gameId: game.id, quantity: 1}, () => {
                 getCart(true);
-            }).error(e => console.error(e.message));
+            }).error(() => swal('Нeшто не беше во ред, Ве молиме обидете се повторно!'));
         }
 
         function getCart(onlyCount) {
             $.get('http://localhost:3000/getCart/' + userId, response => {
                 let html = '';
+                products = response;
                 $('tbody').text(html);
                 $('#itemCount').text(response.length);
 
                 if (!onlyCount) {
                     if (response.length > 0) {
+                        $('#btnPay').prop('disabled', false);
+
                         // Rendering and filling table with items
                         response.forEach(item => {
-                            html += '<tr>' +
+                            html +=
+                                '<tr>' +
                                 '<td>' + item.title + '</td>' +
                                 '<td>' + commafy(item.price) + ' ден.</td>' +
                                 '<td>' + item.quantity + '</td>' +
@@ -214,27 +249,46 @@
                             $('#item' + item.id).click(e => {
                                 loading = true;
                                 e.preventDefault();
-                                $.post('http://localhost:3000/deleteFromCart/', {
-                                    userId,
-                                    gameId: item.gameId
-                                }, () => {
+                                $.post('http://localhost:3000/deleteFromCart/', {userId, gameId: item.gameId}, () => {
                                     loading = false;
                                     getCart(false)
-                                }).error(e => {
+                                }).error(() => {
                                     loading = false;
-                                    console.error(e)
+                                    swal('Нeшто не беше во ред, Ве молиме обидете се повторно!')
                                 });
                             });
                         })
                     } else {
-                        $('tbody').append('<tr id="noItems">' +
+                        $('#btnPay').prop('disabled', true);
+
+                        $('tbody').append(
+                            '<tr id="noItems">' +
                             '<td class="product-name">' +
                             '<div class="product-detail">' +
                             '<p>Во кошничката немате продукти</p>' +
-                            '</div></td></tr>');
+                            '</div>' +
+                            '</td>' +
+                            '</tr>'
+                        );
                     }
                 }
-            }).error(e => console.error(e.message));
+                calculateTotal();
+            }).error(() => swal('Нeшто не беше во ред, Ве молиме обидете се повторно!'));
+        }
+
+        function calculateTotal() {
+            let total = 0;
+            let totalQuantity = 0;
+            products.forEach(game => {
+                total += (game.price * game.quantity);
+                totalQuantity += game.quantity;
+            });
+            let shipping = 100 * totalQuantity;
+            let fullTotal = total + shipping;
+
+            $('#total').text(commafy(total) + ' ден.');
+            $('#shipping').text(commafy(shipping) + ' ден.');
+            $('#fullTotal').text(commafy(fullTotal) + ' ден.');
         }
 
         function commafy(num) {

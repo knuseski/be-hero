@@ -204,7 +204,7 @@ input[type="submit"] {
 
 button[disabled],
 input[disabled] {
-    cursor: default;
+    cursor: not-allowed;
 }
 
 input[type="checkbox"],
@@ -2897,4 +2897,12 @@ table.cart .fa-times {
 .removeItem {
     color: red;
     font-size: 20px;
+}
+
+.swal-button {
+    background-color: #45b77d;
+}
+
+.swal-button:hover {
+    background-color: #69c697 !important;
 }

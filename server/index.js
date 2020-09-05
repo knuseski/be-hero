@@ -142,4 +142,14 @@ app.post('/deleteFromCart', (req, res) => {
     });
 });
 
+app.post('/clearCart', (req, res) => {
+    const {userId} = req.body;
+    con.query("DELETE FROM cart WHERE user_id = ?", [userId], function (err, result) {
+        if (err) {
+            throw err;
+        }
+        res.json(result);
+    });
+});
+
 app.listen(PORT, () => console.log('Server is running on port', PORT));

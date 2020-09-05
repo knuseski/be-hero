@@ -14,8 +14,7 @@
     <link rel="stylesheet" href="assets/styles/style.css">
     <script src="assets/js/ie-support/html5.js"></script>
     <script src="assets/js/ie-support/respond.js"></script>
-
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 
@@ -88,12 +87,12 @@
             </table>
 
             <div class="cart-total">
-                <p><strong>Вкупно: </strong>0.00 ден.</p>
-                <p><strong>Испорака: </strong> 0.00 ден.</p>
-                <p class="total"><strong>Вкупно:</strong><span class="num">0.00 ден.</span></p>
+                <p><strong>Вкупно: </strong><span id="total"></span></p>
+                <p><strong>Испорака: </strong><span id="shipping"></span></p>
+                <p class="total"><strong>Вкупно:</strong><span id="fullTotal" class="num"></span></p>
                 <p>
                     <a href="index.html" class="button muted">Продолжи со купување</a>
-                    <a href="#" class="button">Плати</a>
+                    <button id="btnPay" disabled class="button">Плати</button>
                 </p>
             </div>
 
