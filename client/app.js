@@ -94,20 +94,40 @@
 
             // Get first 4 games
             $.get('http://localhost:3000/games?limit=4', response => {
-                for (let i = 0; i < response.length; i++) {
-                    const game = response[i];
-                    const elemId = i + 1;
+                let html = '';
+                $('.product-list').text(html);
 
-                    $('#gameLink' + elemId).attr('href', 'game.html?id=' + game.id);
-                    $('#gameTitle' + elemId).attr('href', 'game.html?id=' + game.id);
-                    $('#gameMoreDetails' + elemId).attr('href', 'game.html?id=' + game.id);
-                    $('#gameImage' + elemId).attr('src', 'assets/images/games/' + game.imageName);
-                    $('#gameTitle' + elemId).text(game.title);
-                    $('#gamePrice' + elemId).text(commafy(game.price) + ' ден.');
-                    $('#gameDevice' + elemId).text(game.device);
+                response.forEach(game => {
+                    html +=
+                        '<div class="product">' +
+                        '<div class="inner-product">' +
+                        '<div class="figure-image">' +
+                        '<a href="game.html?id=' + game.id + '">' +
+                        '<img id="gameImage1" src="assets/images/games/' + game.imageName + '" alt="Game">' +
+                        '</a>' +
+                        '</div>' +
+                        '<h3 class="product-title">' +
+                        '<a href="game.html?id=' + game.id + '">' + game.title + '</a>' +
+                        '</h3>' +
+                        '<small class="price">' + commafy(game.price) + ' ден.</small>' +
+                        '<p>' + game.device + '</p>' +
+                        '<a id="item' + game.id + '" href="#" class="button">Додади во кошничка</a>' +
+                        '<a href="game.html?id=' + game.id + '" class="button muted">Повеќе детали</a>' +
+                        '</div>' +
+                        '</div>'
+                });
+                $('.product-list').append(html);
 
-                    $('#addToCart' + elemId).click(e => addToCart(e, game));
-                }
+                // Adding click event
+                let loading = false;
+                response.forEach(game => {
+                    $('#item' + game.id).click(e => {
+                        loading = true;
+                        e.preventDefault();
+                        addToCart(e, game);
+                    });
+                });
+
             }).error(() => swal('Нeшто не беше во ред, Ве молиме обидете се повторно!'));
         }
         if (page.startsWith('game.html')) {
@@ -149,6 +169,8 @@
                         }).error(() => swal('Нeшто не беше во ред, Ве молиме обидете се повторно!'));
                     }
                 });
+            } else {
+                window.location.href = "index.html";
             }
         }
 
@@ -214,9 +236,13 @@
         function addToCart(e, game) {
             e.preventDefault();
 
-            $.post('http://localhost:3000/addToCart/', {userId: 1, gameId: game.id, quantity: 1}, () => {
-                getCart(true);
-            }).error(() => swal('Нeшто не беше во ред, Ве молиме обидете се повторно!'));
+            if (userId && username) {
+                $.post('http://localhost:3000/addToCart/', {userId: 1, gameId: game.id, quantity: 1}, () => {
+                    getCart(true);
+                }).error(() => swal('Нeшто не беше во ред, Ве молиме обидете се повторно!'));
+            } else {
+                swal('Најавете се, за да можете да додадете продукт во кошничка!');
+            }
         }
 
         function getCart(onlyCount) {
