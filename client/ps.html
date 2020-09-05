@@ -32,12 +32,13 @@
                     <small class="site-description">Go Hard or Go Home</small>
                 </div>
             </a>
-
             <div class="right-section pull-right">
-                <a href="cart.html" class="cart"><i class="icon-cart"></i> 0 продукти во кошничка</a>
+                <a href="cart.html" id="cart" class="cart"><i class="icon-cart"></i> <span id="itemCount">0</span>
+                    продукти во
+                    кошничка</a>
                 <a href="#" class="login-button">Најава/Регистрација</a>
+                <a href="#" id="btnLogout">Одјави се</a>
             </div>
-
             <div class="main-navigation">
                 <button class="toggle-menu"><i class="fa fa-bars"></i></button>
                 <ul class="menu">
@@ -53,13 +54,6 @@
 
                 <div class="mobile-navigation"></div>
             </div>
-
-            <div class="breadcrumbs">
-                <div class="container">
-                    <a href="index.html">Дома</a>
-                    <span>Игри за PlayStation</span>
-                </div>
-            </div>
         </div>
     </div>
     <main class="main-content">
@@ -67,68 +61,16 @@
             <div class="page">
                 <div class="filter-bar">
                     <div class="product-list">
-                        <div class="product">
-                            <div class="inner-product">
-                                <div class="figure-image">
-                                    <a href="pages/callofdutymodernwarfare2.html">
-                                        <img src="assets/images/ps/callofdutymodernwarfare2.jpg" alt="Game 1"></a>
-                                </div>
-                                <h3 class="product-title"><a href="#">Call of Duty: Modern Warfare 2</a></h3>
-                                <p>Акција</p>
-                                <a href="cart.html" class="button">Додади на кошничка</a>
-                                <a href="pages/callofdutymodernwarfare2.html" class="button muted">Повеќе детали</a>
-                            </div>
-                        </div>
-
-                        <div class="product">
-                            <div class="inner-product">
-                                <div class="figure-image">
-                                    <a href="pages/Cyberpunk2077.html">
-                                        <img src="assets/images/ps/Cyberpunk-2077.jpg" alt="Game 2"></a>
-                                </div>
-                                <h3 class="product-title"><a href="#">Cyberpunk - 2077</a></h3>
-                                <p>Авантура</p>
-                                <a href="cart.html" class="button">Додади на кошничка</a>
-                                <a href="pages/Cyberpunk2077.html" class="button muted">Повеќе детали</a>
-                            </div>
-                        </div>
-
-                        <div class="product">
-                            <div class="inner-product">
-                                <div class="figure-image">
-                                    <a href="pages/fallout4.html">
-                                        <img src="assets/images/ps/fallout4.jfif" alt="Game 1"></a>
-                                </div>
-                                <h3 class="product-title"><a href="#">Fallout 4</a></h3>
-                                <p>Акција</p>
-                                <a href="cart.html" class="button">Додади на кошничка</a>
-                                <a href="pages/fallout4.html" class="button muted">Повеќе детали</a>
-                            </div>
-                        </div>
-
-                        <div class="product">
-                            <div class="inner-product">
-                                <div class="figure-image">
-                                    <a href="pages/GrandTheftAutoV.html">
-                                        <img src="assets/images/ps/GrandTheftAutoV.png" alt="Game 4"></a>
-                                </div>
-                                <h3 class="product-title"><a href="#">Grand Theft Auto V</a></h3>
-                                <p>Акција</p>
-                                <a href="cart.html" class="button">Додади на кошничка</a>
-                                <a href="pages/GrandTheftAutoV.html" class="button muted">Повеќе детали</a>
-                            </div>
-                        </div>
                     </div>
 
-<!--                    <div class="pagination-bar">
+                    <div class="pagination-bar">
                         <div class="pagination">
-                            <a href="#" class="page-number"><i class="fa fa-angle-left"></i></a>
-                            <span class="page-number current">1</span>
-                            <a href="pc.html" class="page-number">2</a>
-
-                            <a href="#" class="page-number"><i class="fa fa-angle-right"></i></a>
+                            <button id="pageLeft" class="page-number"><i class="fa fa-angle-left"></i></button>
+                            <span id="currentPage" class="page-number current">1</span>
+                            <button id="pageRight" class="page-number"><i class="fa fa-angle-right"></i>
+                            </button>
                         </div>
-                    </div>-->
+                    </div>
                 </div>
             </div>
         </div>

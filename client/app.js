@@ -178,6 +178,7 @@
                     } else {
                         $('#device').hide();
                     }
+                    $('#addGameToCart').click(e => addToCart(e, game));
                 }).error(() => swal('Нeшто не беше во ред, Ве молиме обидете се повторно!'));
             }
         }
@@ -243,7 +244,7 @@
                     $('.overlay').fadeOut();
                     $('.popup').toggleClass('active');
 
-                    swal("Hello world!");
+                    swal('Успешно се регистриравте, најавете се за да продилжите!');
                 }).error(() => swal('Нeшто не беше во ред, Ве молиме обидете се повторно!'));
             } else {
                 $('#registerErrorMessage').text('Сите полиња се задолжителни!');
@@ -262,11 +263,17 @@
 
         function addToCart(e, game) {
             e.preventDefault();
+            const quantity = $('#quantity').val();
+
             const userId = sessionStorage.getItem('USER_ID');
             const username = sessionStorage.getItem('USER_NAME');
 
             if (userId && username) {
-                $.post('http://localhost:3000/addToCart/', {userId: userId, gameId: game.id, quantity: 1}, () => {
+                $.post('http://localhost:3000/addToCart/', {
+                    userId: userId,
+                    gameId: game.id,
+                    quantity: quantity ? quantity : 1
+                }, () => {
                     getCart(true);
                     window.location.href = "cart.html";
                 }).error(() => swal('Нeшто не беше во ред, Ве молиме обидете се повторно!'));
@@ -356,10 +363,10 @@
                         '<div class="product">' +
                         '<div class="inner-product">' +
                         '<div class="figure-image">' +
-                        '<a href="game.html">' +
+                        '<a href="game.html?id=' + game.id + '">' +
                         '<img src="assets/images/games/' + game.imageName + '" alt="Game">' +
                         '</div>' +
-                        '<h3 class="product-title"><a href="#">' + game.title + '</a></h3>' +
+                        '<h3 class="product-title"><a href="game.html?id=' + game.id + '">' + game.title + '</a></h3>' +
                         '<p>' + game.category + '</p>' +
                         '<a id="item' + game.id + '" href="#" class="button">Додади во кошничка</a>' +
                         '<a href="game.html?id=' + game.id + '" class="button muted">Повеќе детали</a>' +

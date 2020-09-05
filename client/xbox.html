@@ -34,12 +34,13 @@
                     <small class="site-description">Go Hard or Go Home</small>
                 </div>
             </a>
-
             <div class="right-section pull-right">
-                <a href="cart.html" class="cart"><i class="icon-cart"></i> 0 продукти во кошничка</a>
+                <a href="cart.html" id="cart" class="cart"><i class="icon-cart"></i> <span id="itemCount">0</span>
+                    продукти во
+                    кошничка</a>
                 <a href="#" class="login-button">Најава/Регистрација</a>
+                <a href="#" id="btnLogout">Одјави се</a>
             </div>
-
             <div class="main-navigation">
                 <button class="toggle-menu"><i class="fa fa-bars"></i></button>
                 <ul class="menu">
@@ -49,18 +50,11 @@
                     <li class="menu-item home current-menu-item"><a href="xbox.html">Xbox</a></li>
                 </ul>
                 <div class="search-form">
-                    <label><img src="assets/images/icon-search.png"></label>
+                    <label><img src="assets/images/icon-search.png" alt="Search"></label>
                     <input type="text" placeholder="Пребарувај">
                 </div>
 
                 <div class="mobile-navigation"></div>
-            </div>
-
-            <div class="breadcrumbs">
-                <div class="container">
-                    <a href="index.html">Дома</a>
-                    <span>Игри за Xbox</span>
-                </div>
             </div>
         </div>
     </div>
@@ -69,72 +63,19 @@
             <div class="page">
                 <div class="filter-bar">
                     <div class="product-list">
-                        <div class="product">
-                            <div class="inner-product">
-                                <div class="figure-image">
-                                    <a href="pages/CallofDutyModernWarfare.html">
-                                        <img src="assets/images/xbox/CallofDutyModernWarfare.jpeg" alt="Game 1"></a>
-                                </div>
-                                <h3 class="product-title"><a href="#">Call of Duty Modern Warfare</a></h3>
-                                <p>Акција</p>
-                                <a href="cart.html" class="button">Додади на кошничка</a>
-                                <a href="pages/CallofDutyModernWarfare.html" class="button muted">Повеќе
-                                    детали</a>
-                            </div>
-                        </div>
-
-                        <div class="product">
-                            <div class="inner-product">
-                                <div class="figure-image">
-                                    <a href="pages/DeadSpace.html">
-                                        <img src="assets/images/xbox/DeadSpace.jpg" alt="Game 2"></a>
-                                </div>
-                                <h3 class="product-title"><a href="#">Dead Space</a></h3>
-                                <p>Авантура</p>
-                                <a href="cart.html" class="button">Додади на кошничка</a>
-                                <a href="pages/DeadSpace.html" class="button muted">Повеќе детали</a>
-                            </div>
-                        </div>
-
-                        <div class="product">
-                            <div class="inner-product">
-                                <div class="figure-image">
-                                    <a href="pages/KanesWrath.html">
-                                        <img src="assets/images/xbox/KanesWrath.jpg" alt="Game 1"></a>
-                                </div>
-                                <h3 class="product-title"><a href="#">C&C3: Kane's Wrath</a></h3>
-                                <p>Стратегија</p>
-                                <a href="cart.html" class="button">Додади на кошничка</a>
-                                <a href="pages/KanesWrath.html" class="button muted">Повеќе детали</a>
-                            </div>
-                        </div>
-
-                        <div class="product">
-                            <div class="inner-product">
-                                <div class="figure-image">
-                                    <a href="pages/StarOcean.html">
-                                        <img src="assets/images/xbox/StarOcean.jpg" alt="Game 4"></a>
-                                </div>
-                                <h3 class="product-title"><a href="#">Star Ocean: The Last Hope</a></h3>
-                                <p>Акција</p>
-                                <a href="cart.html" class="button">Додади на кошничка</a>
-                                <a href="pages/StarOcean.html" class="button muted">Повеќе детали</a>
-                            </div>
-                        </div>
                     </div>
 
-                    <!--                    <div class="pagination-bar">
-                                            <div class="pagination">
-                                                <a href="#" class="page-number"><i class="fa fa-angle-left"></i></a>
-                                                <span class="page-number current">1</span>
-                                                <a href="pc.html" class="page-number">2</a>
-
-
-                                                <a href="#" class="page-number"><i class="fa fa-angle-right"></i></a>
-                                            </div>
-                                        </div>-->
+                    <div class="pagination-bar">
+                        <div class="pagination">
+                            <button id="pageLeft" class="page-number"><i class="fa fa-angle-left"></i></button>
+                            <span id="currentPage" class="page-number current">1</span>
+                            <button id="pageRight" class="page-number"><i class="fa fa-angle-right"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
     </main>
 
     <div class="site-footer">

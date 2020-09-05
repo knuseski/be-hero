@@ -32,12 +32,13 @@
                     <small class="site-description">Go Hard or Go Home</small>
                 </div>
             </a>
-
             <div class="right-section pull-right">
-                <a href="pages/cart.html" class="cart"><i class="icon-cart"></i> 0 продукти во кошничка</a>
+                <a href="cart.html" id="cart" class="cart"><i class="icon-cart"></i> <span id="itemCount">0</span>
+                    продукти во
+                    кошничка</a>
                 <a href="#" class="login-button">Најава/Регистрација</a>
+                <a href="#" id="btnLogout">Одјави се</a>
             </div>
-
             <div class="main-navigation">
                 <button class="toggle-menu"><i class="fa fa-bars"></i></button>
                 <ul class="menu">
@@ -47,19 +48,11 @@
                     <li class="menu-item"><a href="xbox.html">Xbox</a></li>
                 </ul>
                 <div class="search-form">
-                    <label><img src="assets/images/icon-search.png"></label>
+                    <label><img src="assets/images/icon-search.png" alt="Search"></label>
                     <input type="text" placeholder="Пребарувај">
                 </div>
 
                 <div class="mobile-navigation"></div>
-            </div>
-
-            <div class="breadcrumbs">
-                <div class="container">
-                    <a href="index.html">Дома</a>
-                    <a id="gameDeviceNav" href="#"></a>
-                    <span id="gameNameNav"></span>
-                </div>
             </div>
         </div>
     </div>
@@ -105,14 +98,14 @@
 
                             </table>
                             <div class="addtocart-bar">
-                                <form action="#">
-                                    <label for="#">Количина</label>
-                                    <select name="#">
+                                <form>
+                                    <label>Количина</label>
+                                    <select id="quantity" name="#">
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
                                     </select>
-                                    <input type="submit" href="cart.html" value="Додади во кошничка">
+                                    <input id="addGameToCart" type="submit" value="Додади во кошничка">
                                 </form>
 
                                 <div class="social-links square">
